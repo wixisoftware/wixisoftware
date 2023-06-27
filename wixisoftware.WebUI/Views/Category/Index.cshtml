@@ -1,0 +1,49 @@
+﻿@using wixisoftware.Entities.Concrete
+
+@model List<Category>
+@{
+    Layout = null;
+
+}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<table>
+    <tr>
+        <th>CategoryName</th>
+        <th>CategoryDescription</th>
+        <th>CategoryStatus</th>
+        <th>Detaylar</th>
+        <th>Sil</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryName</td>
+            <td>@item.CategoryDescription</td>
+            <td>@item.CategoryStatus</td>
+            <td><a href=""  class="btn btn-outline-warning" >Düzenle</a></td>
+            <td><a href="" class="btn btn-outline-danger">Sil</a></td>
+        </tr>
+    }
+
+
+</table>
+
